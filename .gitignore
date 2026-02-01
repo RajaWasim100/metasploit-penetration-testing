@@ -1,0 +1,62 @@
+# Metasploit Framework
+*.log
+*.lock
+.history/
+.msf4/
+.local/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Reports and sensitive data
+reports/*.pdf
+reports/*.docx
+*.pcap
+*.cap
+credentials.txt
+hashes.txt
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Metasploit database
+*.db
+*.sqlite
+*.sqlite3

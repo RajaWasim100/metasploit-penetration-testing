@@ -1,0 +1,7 @@
+# Python dependencies for Metasploit Penetration Testing Project
+# Note: Metasploit Framework itself is installed separately
+
+# Optional: For any Python automation scripts
+# requests>=2.28.0
+# python-nmap>=0.6.1
+# colorama>=0.4.6
