@@ -208,17 +208,20 @@ metasploit-penetration-testing/
 
 <div align="center">
 
-![Exploitation Screenshot 1](images/IMG_0235.png)
+![Exploitation Screenshot 1](images/IMG_0253.jpg)
 *Initial vulnerability scan and reconnaissance*
 
-![Exploitation Screenshot 2](images/IMG_0236.png)
+![Exploitation Screenshot 2](images/IMG_0255.jpg)
 *Exploit selection and configuration*
 
-![Exploitation Screenshot 3](images/IMG_0237.png)
+![Exploitation Screenshot 3](images/IMG_0256.jpg)
 *Successful exploitation and shell access*
 
-![Exploitation Screenshot 4](images/IMG_0238.png)
+![Exploitation Screenshot 4](images/IMG_0257.jpg)
 *Meterpreter session establishment*
+
+![Exploitation Screenshot 5](images/IMG_0258.jpg)
+*Payload execution and connection establishment*
 
 </div>
 
@@ -226,14 +229,17 @@ metasploit-penetration-testing/
 
 <div align="center">
 
-![Post-Exploitation 1](images/IMG_0239.png)
+![Post-Exploitation 1](images/IMG_0259.jpg)
 *System enumeration and information gathering*
 
-![Post-Exploitation 2](images/IMG_0240.png)
+![Post-Exploitation 2](images/IMG_0260.jpg)
 *Privilege escalation demonstration*
 
-![Post-Exploitation 3](images/IMG_0241.png)
+![Post-Exploitation 3](images/IMG_0261.jpg)
 *Network pivoting and lateral movement*
+
+![Post-Exploitation 4](images/IMG_0262.jpg)
+*Process enumeration and system analysis*
 
 </div>
 
@@ -241,14 +247,35 @@ metasploit-penetration-testing/
 
 <div align="center">
 
-![Advanced 1](images/IMG_0242.png)
+![Advanced 1](images/IMG_0263.jpg)
 *Credential harvesting and analysis*
 
-![Advanced 2](images/IMG_0243.png)
+![Advanced 2](images/IMG_0264.jpg)
 *Persistence mechanisms*
 
-![Advanced 3](images/IMG_0244.png)
+![Advanced 3](images/IMG_0265.jpg)
 *Data exfiltration techniques*
+
+![Advanced 4](images/IMG_0266.jpg)
+*Advanced Meterpreter commands*
+
+![Advanced 5](images/IMG_0267.jpg)
+*Network reconnaissance and scanning*
+
+</div>
+
+### Additional Demonstrations
+
+<div align="center">
+
+![Demonstration 1](images/IMG_0268.jpg)
+*Multi-stage exploitation process*
+
+![Demonstration 2](images/IMG_0269.jpg)
+*Post-exploitation module execution*
+
+![Demonstration 3](images/IMG_0270.jpg)
+*Comprehensive security assessment results*
 
 </div>
 
