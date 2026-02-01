@@ -204,82 +204,86 @@ metasploit-penetration-testing/
 
 ## 📸 Screenshots
 
-### Exploitation Process
+This section showcases key phases of the penetration testing process, demonstrating various exploitation techniques, post-exploitation activities, and advanced security assessment procedures.
+
+### Phase 1: Reconnaissance & Exploitation
 
 <div align="center">
 
-![Exploitation Screenshot 1](images/IMG_0253.jpg)
-*Initial vulnerability scan and reconnaissance*
+**Vulnerability Scanning & Target Identification**
+![Vulnerability Scanning](images/IMG_0253.jpg)
 
-![Exploitation Screenshot 2](images/IMG_0255.jpg)
-*Exploit selection and configuration*
+**Exploit Module Selection & Configuration**
+![Exploit Configuration](images/IMG_0255.jpg)
 
-![Exploitation Screenshot 3](images/IMG_0256.jpg)
-*Successful exploitation and shell access*
+**Successful Exploitation & Initial Access**
+![Initial Access](images/IMG_0256.jpg)
 
-![Exploitation Screenshot 4](images/IMG_0257.jpg)
-*Meterpreter session establishment*
+**Meterpreter Session Establishment**
+![Meterpreter Session](images/IMG_0257.jpg)
 
-![Exploitation Screenshot 5](images/IMG_0258.jpg)
-*Payload execution and connection establishment*
+**Payload Execution & Reverse Shell Connection**
+![Payload Execution](images/IMG_0258.jpg)
 
 </div>
 
-### Post-Exploitation Activities
+### Phase 2: Post-Exploitation & Enumeration
 
 <div align="center">
 
-![Post-Exploitation 1](images/IMG_0259.jpg)
-*System enumeration and information gathering*
+**System Information Gathering & Enumeration**
+![System Enumeration](images/IMG_0259.jpg)
 
-![Post-Exploitation 2](images/IMG_0260.jpg)
-*Privilege escalation demonstration*
+**Privilege Escalation Techniques**
+![Privilege Escalation](images/IMG_0260.jpg)
 
-![Post-Exploitation 3](images/IMG_0261.jpg)
-*Network pivoting and lateral movement*
+**Network Pivoting & Lateral Movement**
+![Network Pivoting](images/IMG_0261.jpg)
 
-![Post-Exploitation 4](images/IMG_0262.jpg)
-*Process enumeration and system analysis*
+**Process Analysis & System Profiling**
+![Process Analysis](images/IMG_0262.jpg)
 
 </div>
 
-### Advanced Techniques
+### Phase 3: Advanced Exploitation Techniques
 
 <div align="center">
 
-![Advanced 1](images/IMG_0263.jpg)
-*Credential harvesting and analysis*
+**Credential Harvesting & Hash Extraction**
+![Credential Harvesting](images/IMG_0263.jpg)
 
-![Advanced 2](images/IMG_0264.jpg)
-*Persistence mechanisms*
+**Persistence & Backdoor Installation**
+![Persistence Mechanisms](images/IMG_0264.jpg)
 
-![Advanced 3](images/IMG_0265.jpg)
-*Data exfiltration techniques*
+**Data Exfiltration & Information Gathering**
+![Data Exfiltration](images/IMG_0265.jpg)
 
-![Advanced 4](images/IMG_0266.jpg)
-*Advanced Meterpreter commands*
+**Advanced Meterpreter Command Execution**
+![Meterpreter Commands](images/IMG_0266.jpg)
 
-![Advanced 5](images/IMG_0267.jpg)
-*Network reconnaissance and scanning*
+**Network Reconnaissance & Service Scanning**
+![Network Reconnaissance](images/IMG_0267.jpg)
 
 </div>
 
-### Additional Demonstrations
+### Phase 4: Comprehensive Assessment
 
 <div align="center">
 
-![Demonstration 1](images/IMG_0268.jpg)
-*Multi-stage exploitation process*
+**Multi-Stage Exploitation Workflow**
+![Multi-Stage Exploitation](images/IMG_0268.jpg)
 
-![Demonstration 2](images/IMG_0269.jpg)
-*Post-exploitation module execution*
+**Post-Exploitation Module Execution**
+![Post-Exploitation Modules](images/IMG_0269.jpg)
 
-![Demonstration 3](images/IMG_0270.jpg)
-*Comprehensive security assessment results*
+**Security Assessment Summary & Findings**
+![Assessment Summary](images/IMG_0270.jpg)
 
 </div>
 
-*For more screenshots, see the [images/](images/) directory*
+---
+
+*All screenshots demonstrate techniques performed in controlled lab environments for educational purposes. For additional documentation and detailed walkthroughs, refer to the [documentation](docs/) directory.*
 
 ## 📚 Documentation
 
