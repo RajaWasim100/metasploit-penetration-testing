@@ -204,80 +204,68 @@ metasploit-penetration-testing/
 
 ## 📸 Screenshots
 
-This section showcases key phases of the penetration testing process, demonstrating various exploitation techniques, post-exploitation activities, and advanced security assessment procedures.
+This section documents the complete penetration testing workflow, from initial environment setup and configuration to active exploitation and security assessment procedures.
 
-### Phase 1: Reconnaissance & Exploitation
+### Phase 1: Environment Setup & Configuration
 
 <div align="center">
 
-**Vulnerability Scanning & Target Identification**
-![Vulnerability Scanning](images/IMG_0253.jpg)
+**Step 1: Launch the Metasploitable VM**
+![Launch Metasploitable VM](images/IMG_0253.jpg)
 
-**Exploit Module Selection & Configuration**
-![Exploit Configuration](images/IMG_0255.jpg)
+**Step 2: Identify the Metasploitable IP Address using ifconfig**
+![Identify Target IP](images/IMG_0255.jpg)
 
-**Successful Exploitation & Initial Access**
-![Initial Access](images/IMG_0256.jpg)
+**Step 3: Baseline Reconnaissance with Nmap**
+![Nmap Reconnaissance](images/IMG_0256.jpg)
 
-**Meterpreter Session Establishment**
-![Meterpreter Session](images/IMG_0257.jpg)
+**Step 4: Claude Code and Claude Running in Kali**
+![Claude Integration](images/IMG_0257.jpg)
 
-**Payload Execution & Reverse Shell Connection**
-![Payload Execution](images/IMG_0258.jpg)
+**Step 5: Clone and Set Up MetasploitMCP**
+![MetasploitMCP Setup](images/IMG_0258.jpg)
+
+**Step 6: Start the Metasploit RPC Service**
+![RPC Service Start](images/IMG_0259.jpg)
+
+**Step 7: Configure Claude Desktop**
+![Claude Desktop Configuration](images/IMG_0260.jpg)
+
+**Step 8: Restart Claude Desktop**
+![Claude Desktop Restart](images/IMG_0261.jpg)
+
+**Step 9: MCP Validation**
+![MCP Validation](images/IMG_0262.jpg)
 
 </div>
 
-### Phase 2: Post-Exploitation & Enumeration
+### Phase 2: Active Exploitation & Attack Phase
 
 <div align="center">
 
-**System Information Gathering & Enumeration**
-![System Enumeration](images/IMG_0259.jpg)
+**Vulnerability Exploitation & Initial Compromise**
+![Exploitation 1](images/IMG_0263.jpg)
 
-**Privilege Escalation Techniques**
-![Privilege Escalation](images/IMG_0260.jpg)
+**Payload Delivery & Execution**
+![Exploitation 2](images/IMG_0264.jpg)
 
-**Network Pivoting & Lateral Movement**
-![Network Pivoting](images/IMG_0261.jpg)
+**Meterpreter Session & Command Execution**
+![Exploitation 3](images/IMG_0265.jpg)
 
-**Process Analysis & System Profiling**
-![Process Analysis](images/IMG_0262.jpg)
+**Post-Exploitation Enumeration**
+![Exploitation 4](images/IMG_0266.jpg)
 
-</div>
+**Privilege Escalation Attempts**
+![Exploitation 5](images/IMG_0267.jpg)
 
-### Phase 3: Advanced Exploitation Techniques
+**Credential Harvesting & Data Collection**
+![Exploitation 6](images/IMG_0268.jpg)
 
-<div align="center">
+**Lateral Movement & Network Pivoting**
+![Exploitation 7](images/IMG_0269.jpg)
 
-**Credential Harvesting & Hash Extraction**
-![Credential Harvesting](images/IMG_0263.jpg)
-
-**Persistence & Backdoor Installation**
-![Persistence Mechanisms](images/IMG_0264.jpg)
-
-**Data Exfiltration & Information Gathering**
-![Data Exfiltration](images/IMG_0265.jpg)
-
-**Advanced Meterpreter Command Execution**
-![Meterpreter Commands](images/IMG_0266.jpg)
-
-**Network Reconnaissance & Service Scanning**
-![Network Reconnaissance](images/IMG_0267.jpg)
-
-</div>
-
-### Phase 4: Comprehensive Assessment
-
-<div align="center">
-
-**Multi-Stage Exploitation Workflow**
-![Multi-Stage Exploitation](images/IMG_0268.jpg)
-
-**Post-Exploitation Module Execution**
-![Post-Exploitation Modules](images/IMG_0269.jpg)
-
-**Security Assessment Summary & Findings**
-![Assessment Summary](images/IMG_0270.jpg)
+**Final Assessment & Results**
+![Exploitation 8](images/IMG_0270.jpg)
 
 </div>
 
